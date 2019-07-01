@@ -7,7 +7,6 @@ import urllib
 import urllib2
 
 class Request:
-
     method = ''
     bizContent = ''
 
@@ -26,21 +25,18 @@ class Request:
         
     def getMethod(self):
         return self.method
-
-        
-
-class Client:
     
+class Client:
     appId = ''
     timestamp = ''
     version = ''
     signType = ''
     secretKey = ''
     
-    
     def __init__(self):
         self.timestamp = bytes(int(round(time.time() * 1000)))
         self.version = '1.0'
+        self.signType = 'md5'
 
     def setAppId(self, appId):
         self.appId = appId
